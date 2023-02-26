@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgxMaskModule } from 'ngx-mask';
 import { ProfileRoutingModule } from './profile-routing.module';
 import { ProfileComponent } from './profile.component';
 
@@ -12,6 +13,7 @@ import { ProfileComponent } from './profile.component';
     CommonModule,
     ProfileRoutingModule,
     ReactiveFormsModule,
+    NgxMaskModule.forRoot(),
   ],
 })
 export class ProfileModule {
