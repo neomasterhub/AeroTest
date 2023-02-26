@@ -10,6 +10,7 @@ export class AppComponent {
   title = 'Client';
 
   navLinks = [
+    { location: '/home', label: 'Home' },
     { location: '/inventory', label: 'Inventory' },
     { location: '/reports', label: 'Reports' },
     { location: '/billing', label: 'Billing' },
