@@ -2,7 +2,7 @@
 <form [formGroup]="profileForm">
   <div class="app-input">
     <label for="firstName">First Name</label>
-    <input id="firstName" formControlName="firstName" type="text" placeholder="First Name">
+    <input type="text" id="firstName" formControlName="firstName" placeholder="John">
     <div class="validation-message"
          *ngIf="profileForm.controls.firstName.hasError('required') && profileForm.controls.firstName.touched">
       First name is required
@@ -14,7 +14,7 @@
 
   <div class="app-input">
     <label for="lastName">Last Name</label>
-    <input id="lastName" formControlName="lastName" type="text" placeholder="Last Name">
+    <input type="text" id="lastName" formControlName="lastName" placeholder="Doe">
     <div class="validation-message"
          *ngIf="profileForm.controls.lastName.hasError('required') && profileForm.controls.lastName.touched">
       Last name is required
@@ -26,19 +26,19 @@
 
   <div class="app-input">
     <label for="phoneNumber">Phone Number</label>
-    <input id="phoneNumber" formControlName="phoneNumber" type="text" placeholder="Phone Number">
+    <input type="text" id="phoneNumber" formControlName="phoneNumber" prefix="+7 " mask="(000) 000-0000" placeholder="+7 (987) 654-3210">
     <div class="validation-message"
-         *ngIf="profileForm.controls.phoneNumber.hasError('pattern') && profileForm.controls.lastName.touched">
-      Phone Number must contain only 10 digits
+         *ngIf="profileForm.controls.phoneNumber.hasError('pattern') && profileForm.controls.phoneNumber.touched">
+      Phone number must contain only 10 digits
     </div>
     <div class="validation-message" *ngIf="profileForm.controls.lastName.hasError('maxlength')">
-      Last name must not contain more than 255 characters
+      Phone number must not contain more than 255 characters
     </div>
   </div>
 
   <div class="app-input">
     <label for="webSite">Website</label>
-    <input id="webSite" formControlName="webSite" type="text" placeholder="Web Site">
+    <input id="webSite" formControlName="webSite" type="text" placeholder="john-doe.com">
     <div class="validation-message" *ngIf="profileForm.controls.webSite.hasError('maxlength')">
       Website address must not contain more than 255 characters
     </div>
