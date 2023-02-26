@@ -2,7 +2,7 @@
 <form [formGroup]="profileForm">
   <div class="app-input">
     <label for="firstName"></label>
-    <input id="firstName" formControlName="firstName" placeholder="First Name">
+    <input id="firstName" formControlName="firstName" type="text" placeholder="First Name">
     <div class="validation-message"
          *ngIf="profileForm.controls.firstName.hasError('required') && profileForm.controls.firstName.touched">
       First name is required.
@@ -14,7 +14,7 @@
 
   <div class="app-input">
     <label for="lastName"></label>
-    <input id="lastName" formControlName="lastName" placeholder="Last Name">
+    <input id="lastName" formControlName="lastName" type="text" placeholder="Last Name">
     <div class="validation-message"
          *ngIf="profileForm.controls.firstName.hasError('required') && profileForm.controls.firstName.touched">
       Last name is required.
