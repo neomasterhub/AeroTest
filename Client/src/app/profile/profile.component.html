@@ -1,1 +1,26 @@
 <h1>Profile</h1>
+<form [formGroup]="profileForm">
+  <div class="app-input">
+    <label for="firstName"></label>
+    <input id="firstName" formControlName="firstName" placeholder="First Name">
+    <div class="validation-message"
+         *ngIf="profileForm.controls.firstName.hasError('required') && profileForm.controls.firstName.touched">
+      First name is required.
+    </div>
+    <div class="validation-message" *ngIf="profileForm.controls.firstName.hasError('maxlength')">
+      First name must not contain more than 255 characters
+    </div>
+  </div>
+
+  <div class="app-input">
+    <label for="lastName"></label>
+    <input id="lastName" formControlName="lastName" placeholder="Last Name">
+    <div class="validation-message"
+         *ngIf="profileForm.controls.firstName.hasError('required') && profileForm.controls.firstName.touched">
+      Last name is required.
+    </div>
+    <div class="validation-message" *ngIf="profileForm.controls.firstName.hasError('maxlength')">
+      Last name must not contain more than 255 characters
+    </div>
+  </div>
+</form>
