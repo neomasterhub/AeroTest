@@ -9,10 +9,6 @@ export class AppComponent {
   title = 'Client';
 
   navLinks = [
-    { location: '/test', label: 'Test' },
-    { location: '/test', label: 'Test' },
-    { location: '/test', label: 'Test' },
-    { location: '/test', label: 'Test' },
-    { location: '/test', label: 'Test' },
+    { location: '/inventory', label: 'Inventory' },
   ];
 }
