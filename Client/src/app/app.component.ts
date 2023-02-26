@@ -11,6 +11,7 @@ export class AppComponent {
 
   navLinks = [
     { location: '/inventory', label: 'Inventory' },
+    { location: '/reports', label: 'Reports' },
   ];
 
   // A new Material bug that represented as console error...
