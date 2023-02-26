@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatTabNavPanel } from '@angular/material/tabs';
+import { Router } from '@angular/router';
 import { IAccountModel } from './model/account.model';
 
 @Component({
@@ -28,4 +29,15 @@ export class AppComponent {
     firstName: 'John',
     lastName: 'Doe',
   };
+
+  constructor(private readonly router: Router) {
+  }
+
+  logout() {
+    alert('Logout!');
+  }
+
+  navToProfile() {
+    this.router.navigate(['profile']);
+  }
 }

@@ -16,10 +16,13 @@
       <div>{{account.firstName}} {{account.lastName}}</div>
     </button>
     <mat-menu #menu="matMenu">
-
-      <button mat-menu-item>Edit data</button>
-      <button mat-menu-item>
-        <a href="#">Logout</a>
+      <button mat-menu-item (click)="navToProfile()">
+        <mat-icon>edit</mat-icon>
+        <div>Profile</div>
+      </button>
+      <button mat-menu-item (click)="logout()">
+        <mat-icon>power_settings_new</mat-icon>
+        <div class="text-danger">Logout</div>
       </button>
     </mat-menu>
   </header>
