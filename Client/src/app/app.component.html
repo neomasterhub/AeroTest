@@ -11,6 +11,17 @@
         <span>{{link.label}}</span>
       </a>
     </nav>
+    <button mat-button [matMenuTriggerFor]="menu" id="account-menu-button">
+      <mat-icon class="account-icon">account_circle</mat-icon>
+      <div>{{account.firstName}} {{account.lastName}}</div>
+    </button>
+    <mat-menu #menu="matMenu">
+
+      <button mat-menu-item>Edit data</button>
+      <button mat-menu-item>
+        <a href="#">Logout</a>
+      </button>
+    </mat-menu>
   </header>
   <main class="container">
     <router-outlet></router-outlet>

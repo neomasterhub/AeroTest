@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatTabNavPanel } from '@angular/material/tabs';
+import { IAccountModel } from './model/account.model';
 
 @Component({
   selector: 'app-root',
@@ -21,5 +22,10 @@ export class AppComponent {
   // ! ERROR Error: A mat-tab-nav-panel must be specified via [tabPanel].
   tabPanelMock: MatTabNavPanel = {
     id: '1',
+  };
+
+  account: IAccountModel = {
+    firstName: 'John',
+    lastName: 'Doe',
   };
 }
