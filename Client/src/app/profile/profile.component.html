@@ -16,11 +16,19 @@
     <label for="lastName"></label>
     <input id="lastName" formControlName="lastName" type="text" placeholder="Last Name">
     <div class="validation-message"
-         *ngIf="profileForm.controls.firstName.hasError('required') && profileForm.controls.firstName.touched">
+         *ngIf="profileForm.controls.lastName.hasError('required') && profileForm.controls.lastName.touched">
       Last name is required.
     </div>
-    <div class="validation-message" *ngIf="profileForm.controls.firstName.hasError('maxlength')">
+    <div class="validation-message" *ngIf="profileForm.controls.lastName.hasError('maxlength')">
       Last name must not contain more than 255 characters
+    </div>
+  </div>
+
+  <div class="app-input">
+    <label for="webSite"></label>
+    <input id="webSite" formControlName="webSite" type="text" placeholder="Web Site">
+    <div class="validation-message" *ngIf="profileForm.controls.webSite.hasError('maxlength')">
+      Web site address must not contain more than 255 characters
     </div>
   </div>
 </form>
