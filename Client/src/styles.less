@@ -4,6 +4,12 @@
   font-size: 14px;
 }
 
+html,
+body {
+  min-height: 100vh;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
 a {
   color: @a;
 }
@@ -11,8 +17,11 @@ a:hover {
   color: @a__hover;
 }
 
-html,
-body {
-  min-height: 100vh;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+h1 {
+  color: @main;
+}
+
+main {
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
