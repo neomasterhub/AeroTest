@@ -13,6 +13,7 @@ export class AppComponent {
     { location: '/inventory', label: 'Inventory' },
     { location: '/reports', label: 'Reports' },
     { location: '/billing', label: 'Billing' },
+    { location: '/profile', label: 'Profile' },
   ];
 
   // A new Material bug that represented as console error...
