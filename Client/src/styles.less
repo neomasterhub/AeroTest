@@ -51,6 +51,11 @@ main {
     transition: border 300ms;
   }
 
+  input[type="text"][disabled] {
+    background-color: #f3f3f3;
+    border-color: #f3f3f3;
+  }
+
   input[type="text"]:focus {
     border: solid 3px @main;
     background-color: @input_bg__hover;
