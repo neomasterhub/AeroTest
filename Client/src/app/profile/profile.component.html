@@ -1,11 +1,11 @@
 <h1>Profile</h1>
 <form [formGroup]="profileForm">
   <div class="app-input">
-    <label for="firstName"></label>
+    <label for="firstName">First Name</label>
     <input id="firstName" formControlName="firstName" type="text" placeholder="First Name">
     <div class="validation-message"
          *ngIf="profileForm.controls.firstName.hasError('required') && profileForm.controls.firstName.touched">
-      First name is required.
+      First name is required
     </div>
     <div class="validation-message" *ngIf="profileForm.controls.firstName.hasError('maxlength')">
       First name must not contain more than 255 characters
@@ -13,11 +13,11 @@
   </div>
 
   <div class="app-input">
-    <label for="lastName"></label>
+    <label for="lastName">Last Name</label>
     <input id="lastName" formControlName="lastName" type="text" placeholder="Last Name">
     <div class="validation-message"
          *ngIf="profileForm.controls.lastName.hasError('required') && profileForm.controls.lastName.touched">
-      Last name is required.
+      Last name is required
     </div>
     <div class="validation-message" *ngIf="profileForm.controls.lastName.hasError('maxlength')">
       Last name must not contain more than 255 characters
@@ -25,10 +25,22 @@
   </div>
 
   <div class="app-input">
-    <label for="webSite"></label>
+    <label for="phoneNumber">Phone Number</label>
+    <input id="phoneNumber" formControlName="phoneNumber" type="text" placeholder="Phone Number">
+    <div class="validation-message"
+         *ngIf="profileForm.controls.phoneNumber.hasError('pattern') && profileForm.controls.lastName.touched">
+      Phone Number must contain only 10 digits
+    </div>
+    <div class="validation-message" *ngIf="profileForm.controls.lastName.hasError('maxlength')">
+      Last name must not contain more than 255 characters
+    </div>
+  </div>
+
+  <div class="app-input">
+    <label for="webSite">Website</label>
     <input id="webSite" formControlName="webSite" type="text" placeholder="Web Site">
     <div class="validation-message" *ngIf="profileForm.controls.webSite.hasError('maxlength')">
-      Web site address must not contain more than 255 characters
+      Website address must not contain more than 255 characters
     </div>
   </div>
 </form>

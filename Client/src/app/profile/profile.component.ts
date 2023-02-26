@@ -18,6 +18,11 @@ export class ProfileComponent {
       Validators.required,
       Validators.maxLength(this.maxLength),
     ]),
+    phoneNumber: new FormControl('', [
+      Validators.required,
+      Validators.maxLength(this.maxLength),
+      Validators.pattern('[0-9]{10,10}'),
+    ]),
     webSite: new FormControl('', [
       Validators.maxLength(this.maxLength),
     ]),
