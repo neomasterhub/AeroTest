@@ -5,12 +5,12 @@ import { InventoryComponent } from './inventory.component';
 
 @NgModule({
   declarations: [
-    InventoryComponent
+    InventoryComponent,
   ],
   imports: [
     CommonModule,
-    InventoryRoutingModule
-  ]
+    InventoryRoutingModule,
+  ],
 })
 export class InventoryModule {
 }
