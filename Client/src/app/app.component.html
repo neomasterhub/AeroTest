@@ -1,6 +1,6 @@
 <div id="viewport">
   <header>
-    <nav mat-tab-nav-bar>
+    <nav mat-tab-nav-bar [tabPanel]="tabPanelMock">
       <a mat-tab-link
          *ngFor="let link of navLinks"
          routerLink="{{link.location}}"

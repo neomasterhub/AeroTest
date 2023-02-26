@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatTabNavPanel } from '@angular/material/tabs';
 
 @Component({
   selector: 'app-root',
@@ -11,4 +12,10 @@ export class AppComponent {
   navLinks = [
     { location: '/inventory', label: 'Inventory' },
   ];
+
+  // A new Material bug that represented as console error...
+  // ! ERROR Error: A mat-tab-nav-panel must be specified via [tabPanel].
+  tabPanelMock: MatTabNavPanel = {
+    id: '1',
+  };
 }
