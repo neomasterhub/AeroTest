@@ -1,5 +1,16 @@
 <div id="viewport">
-  <header></header>
+  <header>
+    <nav mat-tab-nav-bar>
+      <a mat-tab-link
+         *ngFor="let link of navLinks"
+         routerLink="{{link.location}}"
+         routerLinkActive=""
+         #rla="routerLinkActive"
+         [active]="rla.isActive">
+        <span>{{link.label}}</span>
+      </a>
+    </nav>
+  </header>
   <main></main>
   <footer></footer>
 </div>
