@@ -8,8 +8,20 @@
   header {
     display: flex;
     align-items: center;
-    background-color: @main;
     box-shadow: 0 3px 5px -1px #0003, 0 6px 10px #00000024, 0 1px 18px #0000001f;
+
+    .href {
+      span {
+        color: @a;
+      }
+    }
+
+    .href:hover {
+      span {
+        transition: color 0.3s;
+        color: @a__hover;
+      }
+    }
   }
 
   footer {
