@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatTabNavPanel } from '@angular/material/tabs';
 import { Router } from '@angular/router';
 import { IAccountModel } from './model/account.model';
+import { AccountService } from './services/account.service';
 
 @Component({
   selector: 'app-root',
@@ -25,12 +26,13 @@ export class AppComponent {
     id: '1',
   };
 
-  account: IAccountModel = {
-    firstName: 'John',
-    lastName: 'Doe',
-  };
+  account: IAccountModel;
 
-  constructor(private readonly router: Router) {
+  constructor(
+    private readonly router: Router,
+    accountService: AccountService,
+  ) {
+    this.account = accountService.getAccount();
   }
 
   logout() {
