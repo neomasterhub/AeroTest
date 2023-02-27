@@ -23,7 +23,7 @@ export class ProfileComponent {
       Validators.maxLength(this.maxLength),
       Validators.pattern('[0-9]{10,10}'),
     ]),
-    webSite: new FormControl('', [
+    website: new FormControl('', [
       Validators.maxLength(this.maxLength),
       Validators.pattern('https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)'),
     ]),
