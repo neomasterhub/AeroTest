@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { IAccountModel } from '../model/account.model';
 import { AccountService } from '../services/account.service';
+import { OutputAccountService } from '../services/output-account.service';
 
 @Component({
   selector: 'app-profile',
@@ -12,7 +14,10 @@ export class ProfileComponent {
 
   readonly email;
 
-  constructor(private readonly accountService: AccountService) {
+  constructor(
+    private readonly accountService: AccountService,
+    private readonly outputAccountService: OutputAccountService,
+  ) {
     const account = accountService.getAccount();
 
     this.email = account.email;
@@ -50,12 +55,16 @@ export class ProfileComponent {
       return;
     }
 
-    this.accountService.changeAccount({
+    const account: IAccountModel = {
       email: this.email,
       firstName: this.profileForm.controls.firstName.value as string,
       lastName: this.profileForm.controls.lastName.value as string,
       phoneNumber: this.profileForm.controls.phoneNumber.value as string,
       website: this.profileForm.controls.website.value as string,
-    });
+    };
+
+    this.accountService.changeAccount(account);
+
+    this.outputAccountService.emit(account);
   }
 }
