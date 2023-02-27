@@ -7,7 +7,7 @@ export class AccountService {
     email: 'john-doe@mail.com',
     firstName: 'John',
     lastName: 'Doe',
-    phone: '7987654321',
+    phoneNumber: '7987654321',
     website: 'https://john-doe.com',
   };
 
