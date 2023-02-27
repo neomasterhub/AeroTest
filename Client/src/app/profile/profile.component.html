@@ -2,7 +2,7 @@
 <form [formGroup]="profileForm" (ngSubmit)="submit()">
   <div class="app-input">
     <label for="firstName">Email</label>
-    <input disabled type="text" id="email" placeholder="john-doe@mail.com">
+    <input disabled type="text" id="email" [value]="email">
   </div>
 
   <div class="app-input">
