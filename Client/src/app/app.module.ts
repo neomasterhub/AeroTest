@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AccountService } from './services/account.service';
+import { OutputAccountService } from './services/output-account.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,10 @@ import { AccountService } from './services/account.service';
     MatMenuModule,
     MatTabsModule,
   ],
-  providers: [AccountService],
+  providers: [
+    AccountService,
+    OutputAccountService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {

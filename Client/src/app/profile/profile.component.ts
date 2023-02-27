@@ -9,6 +9,7 @@ import { AccountService } from '../services/account.service';
 })
 export class ProfileComponent {
   readonly maxLength = 255;
+
   readonly email;
 
   constructor(private readonly accountService: AccountService) {
