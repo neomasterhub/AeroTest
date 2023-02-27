@@ -1,15 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { MatTabNavPanel } from '@angular/material/tabs';
 import { Router } from '@angular/router';
+import { Subject, takeUntil, tap } from 'rxjs';
 import { IAccountModel } from './model/account.model';
 import { AccountService } from './services/account.service';
+import { OutputAccountService } from './services/output-account.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.less'],
 })
-export class AppComponent {
+export class AppComponent implements OnDestroy {
   title = 'Client';
 
   navLinks = [
@@ -28,11 +30,21 @@ export class AppComponent {
 
   account: IAccountModel;
 
+  private unsubscribeAccount = new Subject<void>();
+
   constructor(
     private readonly router: Router,
     accountService: AccountService,
+    outputAccountService: OutputAccountService,
   ) {
     this.account = accountService.getAccount();
+
+    outputAccountService.getSubscription()
+      .pipe(
+        takeUntil(this.unsubscribeAccount),
+        tap((account) => this.account = account),
+      )
+      .subscribe();
   }
 
   logout() {
@@ -41,5 +53,10 @@ export class AppComponent {
 
   navToProfile() {
     this.router.navigate(['profile']);
+  }
+
+  ngOnDestroy() {
+    this.unsubscribeAccount.next();
+    this.unsubscribeAccount.complete();
   }
 }
