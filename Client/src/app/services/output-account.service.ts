@@ -14,5 +14,6 @@ export class OutputAccountService {
 
   emit(account: IAccountModel) {
     this.accountSubject.next(account);
+    console.log(account);
   }
 }
