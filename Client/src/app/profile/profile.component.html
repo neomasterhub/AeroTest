@@ -43,9 +43,13 @@
 
   <div class="app-input">
     <label for="webSite">Website</label>
-    <input id="webSite" formControlName="webSite" type="text" placeholder="john-doe.com">
+    <input id="webSite" formControlName="webSite" type="text"  placeholder="john-doe.com">
+    <div class="validation-message"
+         *ngIf="profileForm.controls.webSite.hasError('pattern') && profileForm.controls.webSite.touched">
+      Website URL is invalid
+    </div>
     <div class="validation-message" *ngIf="profileForm.controls.webSite.hasError('maxlength')">
-      Website address must not contain more than 255 characters
+      Website URL must not contain more than 255 characters
     </div>
   </div>
 </form>
