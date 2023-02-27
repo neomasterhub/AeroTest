@@ -1,5 +1,5 @@
 <h1>Profile</h1>
-<form [formGroup]="profileForm">
+<form [formGroup]="profileForm" (ngSubmit)="submit()">
   <div class="app-input">
     <label for="firstName">Email</label>
     <input disabled type="text" id="email" placeholder="john-doe@mail.com">

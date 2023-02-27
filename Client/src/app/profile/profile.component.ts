@@ -43,4 +43,18 @@ export class ProfileComponent {
       Validators.pattern('https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)'),
     ]),
   });
+
+  submit() {
+    if (this.profileForm.invalid) {
+      return;
+    }
+
+    this.accountService.changeAccount({
+      email: this.email,
+      firstName: this.profileForm.controls.firstName.value as string,
+      lastName: this.profileForm.controls.lastName.value as string,
+      phoneNumber: this.profileForm.controls.phoneNumber.value as string,
+      website: this.profileForm.controls.website.value as string,
+    });
+  }
 }
