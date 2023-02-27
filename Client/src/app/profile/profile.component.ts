@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AccountService } from '../services/account.service';
 
 @Component({
   selector: 'app-profile',
@@ -8,9 +9,23 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class ProfileComponent {
   readonly maxLength = 255;
+  readonly email;
+
+  constructor(private readonly accountService: AccountService) {
+    const account = accountService.getAccount();
+
+    this.email = account.email;
+
+    this.profileForm.setValue({
+      firstName: account.firstName,
+      lastName: account.lastName,
+      phoneNumber: account.phoneNumber,
+      website: account.website,
+    });
+  }
 
   profileForm = new FormGroup({
-    firstName: new FormControl('', [
+    firstName: new FormControl(this.accountService.getAccount().firstName, [
       Validators.required,
       Validators.maxLength(this.maxLength),
     ]),
